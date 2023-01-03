@@ -1,0 +1,138 @@
+Weaponkit:
+  Prefix: "&7[&5Weaponkit&7]"
+
+  Permissions:
+    PermissionGuiUse: "weaponkit.gui.use"
+    PermissionCommandUse: "weaponkit.command.use"
+    NetherWartGive: "weaponkit.netherstar.give"
+    ItemGive: "weaponkit.item.give"
+    CooldownReset: "cooldown.reset.use"
+
+  ConsoleCommand:
+    NotAPlayerCommand: "&cThis Command can only be use by the &aConsole."
+
+  WeaponkitGui:
+    Name: "&7[&5Weaponkit&7]"
+    # Size is how many slots the gui should have.
+    Size: 27 # Note remember to have as many slots as you have items, you can have more if you want.
+    GetSlotNrOnItemClick: false # How to enable: set it to: true
+
+  CoolDown:
+    WaitMessage: "&7Please wait until the &acooldown &7has run out"
+    ResetMessage: "&7Your &acooldown &7has been &3reset"
+
+  Messages:
+    PermissionMessage: "&cYou do not have permission to use this command."
+    HelpMessage:
+      - "&7----------------- &aHelp &7---------------"
+      - "&5/WeaponKit help &7- To see how to use this command"
+      - "&5/WeaponKit &7 to open a Gui and choose your item"
+      - "&5/WeaponKit List &7- To see what type of items are available"
+      - "&5/WeaponKit <Player> Star &7- To receive a Nether star, right click it an receive a kit of wither armor and sword"
+      - "&5/WeaponKit <Player> <ItemType> <EffectType> &7- To give a player a item"
+      - "&7-------------------------------------"
+
+  Items:
+    ListItemsCommand:
+      - "&7----------------- &aAvailable Items &7---------------"
+      - "&5NetherWart Kit &7- Contains Nether Armor, Wither Sword and NetherWart"
+      - "&5Poison &7- Contains Sword and Axe"
+      - "&5Blindness &7- Contains Sword and Axe"
+      - "&5Nause &7- Contains Sword and Axe"
+      - "&5Wither &7- Contains Sword and Axe"
+      - "&7----------------------------------------------"
+
+# Important note!! Only one item in a slot
+    WitherKit:
+      Enchantments: true # How to disable: set it to: false
+      Soulbound: true # How to disable: set it to: false
+      Name: '&5Wither kit'
+      DisplayItemInGui: true # How to disable: set it to: false
+      SlotNumber: 18
+
+    Armor:
+      WitherHelmet:
+        Enchantments: true # How to disable: set it to: false
+        Soulbound: true # How to disable: set it to: false
+        Name: '&5Wither Helmet'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 16
+
+      WitherChestPlate:
+        Enchantments: true # How to disable: set it to: false
+        Soulbound: true # How to disable: set it to: false
+        Name: '&5Wither ChestPlate'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 17
+
+      WitherLeggings:
+        Enchantments: true # How to disable: set it to: false
+        Soulbound: true # How to disable: set it to: false
+        Name: '&5Wither Leggings'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 25
+
+      WitherBoots:
+        Enchantments: true # How to disable: set it to: false
+        Soulbound: true # How to disable: set it to: false
+        Name: '&5Wither Boots'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 26
+
+    Axe:
+      PoisonAxeConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&5PoisonAxe'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 9
+
+      NauseaAxeConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&3NauseaAxe'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 10
+
+      BlindnessAxeConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&6BlindnessAxe'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 11
+
+      WitherAxeConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&5WitherAxe'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 12
+
+    Sword:
+      PoisonSwordConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&5PoisonSword'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 0
+
+      NauseaSwordConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&3NauseaSword'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 1
+
+      BlindnessSwordConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&6BlindnessSword'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 2
+
+      WitherSwordConfig:
+        Soulbound: true
+        Enchantments: true
+        Name: '&5WitherSword'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 3
