@@ -41,13 +41,16 @@ public class WeaponkitGui implements Listener {
     public String WSW = weaponkit.getConfig().getString("Weaponkit.Items.Sword.WitherSwordConfig.Name");
 
     // NetherWart
-    public String NW = weaponkit.getConfig().getString("Weaponkit.Items.WitherKit.Name");
+    public String NW = weaponkit.getConfig().getString("Weaponkit.Items.WitherTear.Name");
 
     // Armor
     public String WH = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherHelmet.Name");
     public String WC = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherChestPlate.Name");
     public String WL = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherLeggings.Name");
     public String WB = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherBoots.Name");
+
+    // Bow
+    public String MulBow = weaponkit.getConfig().getString("Weaponkit.Items.Bow.Multi.Name");
 
     private final Inventory inv;
 
@@ -57,57 +60,61 @@ public class WeaponkitGui implements Listener {
     }
 
     private void initializeItems() {
-        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.WitherKit.DisplayItemInGui")) {
-            int wwart = weaponkit.getConfig().getInt("Weaponkit.Items.WitherKit.SlotNumber");
-            inv.setItem(wwart, new itemstack().Nether_Wart());
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.WitherTear.DisplayItemInGui")) {
+            int WitherKit = weaponkit.getConfig().getInt("Weaponkit.Items.WitherTear.SlotNumber");
+            inv.setItem(WitherKit, new itemstack().Wither_Tear());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Armor.WitherHelmet.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherHelmet.SlotNumber");
-            inv.setItem(wboots, new itemstack().Nether_Wart_Helmet());
+            int WitherHelmet= weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherHelmet.SlotNumber");
+            inv.setItem(WitherHelmet, new itemstack().Nether_Wart_Helmet());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Armor.WitherChestPlate.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherChestPlate.SlotNumber");
-            inv.setItem(wboots, new itemstack().Nether_Wart_Chestplate());
+            int WitherChestPlate = weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherChestPlate.SlotNumber");
+            inv.setItem(WitherChestPlate, new itemstack().Nether_Wart_Chestplate());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Armor.WitherLeggings.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherLeggings.SlotNumber");
-            inv.setItem(wboots, new itemstack().Nether_Wart_Leggins());
+            int WitherLeggings = weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherLeggings.SlotNumber");
+            inv.setItem(WitherLeggings, new itemstack().Nether_Wart_Leggins());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Armor.WitherBoots.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherBoots.SlotNumber");
-            inv.setItem(wboots, new itemstack().Nether_Wart_Boots());
+            int WitherBoots = weaponkit.getConfig().getInt("Weaponkit.Items.Armor.WitherBoots.SlotNumber");
+            inv.setItem(WitherBoots, new itemstack().Nether_Wart_Boots());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Axe.PoisonAxeConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.PoisonAxeConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Poison_Axe());
+            int PoisonAxeConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.PoisonAxeConfig.SlotNumber");
+            inv.setItem(PoisonAxeConfig, new itemstack().Poison_Axe());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Axe.NauseaAxeConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.NauseaAxeConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Nausea_Axe());
+            int NauseaAxeConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.NauseaAxeConfig.SlotNumber");
+            inv.setItem(NauseaAxeConfig, new itemstack().Nausea_Axe());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Axe.BlindnessAxeConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.BlindnessAxeConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Blindness_Axe());
+            int BlindnessAxeConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.BlindnessAxeConfig.SlotNumber");
+            inv.setItem(BlindnessAxeConfig, new itemstack().Blindness_Axe());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Axe.WitherAxeConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.WitherAxeConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Wither_Axe());
+            int WitherAxeConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Axe.WitherAxeConfig.SlotNumber");
+            inv.setItem(WitherAxeConfig, new itemstack().Wither_Axe());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Sword.PoisonSwordConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.PoisonSwordConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Poison_Sword());
+            int PoisonSwordConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.PoisonSwordConfig.SlotNumber");
+            inv.setItem(PoisonSwordConfig, new itemstack().Poison_Sword());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Sword.NauseaSwordConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.NauseaSwordConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Nausea_Sword());
+            int NauseaSwordConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.NauseaSwordConfig.SlotNumber");
+            inv.setItem(NauseaSwordConfig, new itemstack().Nausea_Sword());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Sword.BlindnessSwordConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.BlindnessSwordConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Blindness_Sword());
+            int BlindnessSwordConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.BlindnessSwordConfig.SlotNumber");
+            inv.setItem(BlindnessSwordConfig, new itemstack().Blindness_Sword());
         }
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Sword.WitherSwordConfig.DisplayItemInGui")) {
-            int wboots = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.WitherSwordConfig.SlotNumber");
-            inv.setItem(wboots, new itemstack().Wither_Sword());
+            int WitherSwordConfig = weaponkit.getConfig().getInt("Weaponkit.Items.Sword.WitherSwordConfig.SlotNumber");
+            inv.setItem(WitherSwordConfig, new itemstack().Wither_Sword());
+        }
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Multi.DisplayItemInGui")) {
+            int Multi = weaponkit.getConfig().getInt("Weaponkit.Items.Bow.Multi.SlotNumber");
+            inv.setItem(Multi, new itemstack().Multi_Bow());
         }
 
     }
@@ -166,7 +173,7 @@ public class WeaponkitGui implements Listener {
 
             // Wither
             if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&',NW))) {
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ConsoleWeaponkit" + " " + p.getName() + " " + "Wither Kit");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ConsoleWeaponkit" + " " + p.getName() + " " + "Wither Tear");
             }
             if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&',WH))) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ConsoleWeaponkit" + " " + p.getName() + " " + "Wither Helmet");
@@ -179,6 +186,11 @@ public class WeaponkitGui implements Listener {
             }
             if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&',WB))) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ConsoleWeaponkit" + " " + p.getName() + " " + "Wither Boots");
+            }
+
+            // Bow
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&',MulBow))) {
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ConsoleWeaponkit" + " " + p.getName() + " " + "Bow Multi");
             }
 
 

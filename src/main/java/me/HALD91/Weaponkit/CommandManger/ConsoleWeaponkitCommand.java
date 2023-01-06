@@ -68,7 +68,7 @@ public class ConsoleWeaponkitCommand implements CommandExecutor {
                         if (args[2].equalsIgnoreCase("Kit")) {
                             if (Cooldown.tryCooldown(p, "Kit", 86400000L)) {
                                 p.getInventory().addItem(new itemstack().Wither_Sword());
-                                p.getInventory().addItem(new itemstack().Nether_Wart());
+                                p.getInventory().addItem(new itemstack().Wither_Tear());
                                 p.getInventory().addItem(new itemstack().Nether_Wart_Helmet());
                                 p.getInventory().addItem(new itemstack().Nether_Wart_Chestplate());
                                 p.getInventory().addItem(new itemstack().Nether_Wart_Leggins());
@@ -78,8 +78,8 @@ public class ConsoleWeaponkitCommand implements CommandExecutor {
                                 p.sendMessage(ChatColor.translateAlternateColorCodes('&',prefix + " " + weaponkit.getConfig().getString("Weaponkit.CoolDown.WaitMessage")));
                             }
                         }
-                        if (args[2].equalsIgnoreCase("Star")) {
-                            p.getInventory().addItem(new itemstack().Nether_Wart());
+                        if (args[2].equalsIgnoreCase("Tear")) {
+                            p.getInventory().addItem(new itemstack().Wither_Tear());
                             p.updateInventory();
                         }
                         if (args[2].equalsIgnoreCase("Helmet")) {
@@ -96,6 +96,12 @@ public class ConsoleWeaponkitCommand implements CommandExecutor {
                         }
                         if (args[2].equalsIgnoreCase("Boots")) {
                             p.getInventory().addItem(new itemstack().Nether_Wart_Boots());
+                            p.updateInventory();
+                        }
+                    }
+                    if (args[1].equalsIgnoreCase("Bow")) {
+                        if (args[2].equalsIgnoreCase("Multi")) {
+                            p.getInventory().addItem(new itemstack().Multi_Bow());
                             p.updateInventory();
                         }
                     }

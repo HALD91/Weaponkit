@@ -4,6 +4,7 @@ import me.HALD91.Weaponkit.Cooldown.Cooldown;
 import me.HALD91.Weaponkit.Gui.WeaponkitGui;
 import me.HALD91.Weaponkit.Gui.itemstack;
 import me.HALD91.Weaponkit.weaponkit;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -63,17 +64,8 @@ public class WeaponkitCommand implements CommandExecutor {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + " " + PermMessage));
                     }
                 }
-                if (args.length == 2) {
-                    if (!(args[0] == null)) {
-                        if (args[1].equalsIgnoreCase("star")) {
-                            if (p.hasPermission(ChatColor.translateAlternateColorCodes('&',"" + PermissionNetherWartGive))) {
-                                p.getInventory().addItem(new itemstack().Nether_Wart());
-                                p.updateInventory();
-                            }
-                        }
-                    }
-                }
                 if (args.length == 3) {
+                    Player d = Bukkit.getServer().getPlayer(args[0]);
                     if (p.hasPermission(ChatColor.translateAlternateColorCodes('&', "" + PermissionItemGive))) {
                         if (!(args[0] == null)) {
                             if (args[1].equalsIgnoreCase("help")) {
@@ -83,73 +75,80 @@ public class WeaponkitCommand implements CommandExecutor {
                             }
                             if (args[1].equalsIgnoreCase("Sword")) {
                                 if (args[2].equalsIgnoreCase("Poison")) {
-                                    p.getInventory().addItem(new itemstack().Poison_Sword());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Poison_Sword());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("Blindness")) {
-                                    p.getInventory().addItem(new itemstack().Blindness_Sword());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Blindness_Sword());
+                                    d.updateInventory();
                                 }
                                  if (args[2].equalsIgnoreCase("Nausea")) {
-                                    p.getInventory().addItem(new itemstack().Nausea_Sword());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Nausea_Sword());
+                                    d.updateInventory();
                                 }
                                  if (args[2].equalsIgnoreCase("Wither")) {
-                                    p.getInventory().addItem(new itemstack().Wither_Sword());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Wither_Sword());
+                                    d.updateInventory();
                                 }
                             }
                             if (args[1].equalsIgnoreCase("Axe")) {
                                 if (args[2].equalsIgnoreCase("Poison")) {
-                                    p.getInventory().addItem(new itemstack().Poison_Axe());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Poison_Axe());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("Blindness")) {
-                                    p.getInventory().addItem(new itemstack().Blindness_Axe());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Blindness_Axe());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("Nausea")) {
-                                    p.getInventory().addItem(new itemstack().Nausea_Axe());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Nausea_Axe());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("Wither")) {
-                                    p.getInventory().addItem(new itemstack().Wither_Axe());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Wither_Axe());
+                                    d.updateInventory();
                                 }
                             }
                             if (args[1].equalsIgnoreCase("Wither")) {
                                 if (args[2].equalsIgnoreCase("Kit")) {
-                                    if (Cooldown.tryCooldown(p, "Kit", 86400000L)) {
-                                        p.getInventory().addItem(new itemstack().Wither_Sword());
-                                        p.getInventory().addItem(new itemstack().Nether_Wart());
-                                        p.getInventory().addItem(new itemstack().Nether_Wart_Helmet());
-                                        p.getInventory().addItem(new itemstack().Nether_Wart_Chestplate());
-                                        p.getInventory().addItem(new itemstack().Nether_Wart_Leggins());
-                                        p.getInventory().addItem(new itemstack().Nether_Wart_Boots());
-                                        p.updateInventory();
+                                    p.sendMessage("" + d);
+                                    if (Cooldown.tryCooldown(d, "Kit", 86400000L)) {
+                                        d.getInventory().addItem(new itemstack().Wither_Sword());
+                                        d.getInventory().addItem(new itemstack().Wither_Tear());
+                                        d.getInventory().addItem(new itemstack().Nether_Wart_Helmet());
+                                        d.getInventory().addItem(new itemstack().Nether_Wart_Chestplate());
+                                        d.getInventory().addItem(new itemstack().Nether_Wart_Leggins());
+                                        d.getInventory().addItem(new itemstack().Nether_Wart_Boots());
+                                        d.updateInventory();
                                     } else {
-                                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',prefix + " " + weaponkit.getConfig().getString("Weaponkit.CoolDown.WaitMessage")));
+                                        d.sendMessage(ChatColor.translateAlternateColorCodes('&',prefix + " " + weaponkit.getConfig().getString("Weaponkit.CoolDown.WaitMessage")));
                                     }
                                 }
-                                if (args[2].equalsIgnoreCase("Star")) {
-                                    p.getInventory().addItem(new itemstack().Nether_Wart());
-                                    p.updateInventory();
+                                if (args[2].equalsIgnoreCase("Tear")) {
+                                    d.getInventory().addItem(new itemstack().Wither_Tear());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("Helmet")) {
-                                    p.getInventory().addItem(new itemstack().Nether_Wart_Helmet());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Nether_Wart_Helmet());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("ChestPlate")) {
-                                    p.getInventory().addItem(new itemstack().Nether_Wart_Chestplate());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Nether_Wart_Chestplate());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("Leggins")) {
-                                    p.getInventory().addItem(new itemstack().Nether_Wart_Leggins());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Nether_Wart_Leggins());
+                                    d.updateInventory();
                                 }
                                 if (args[2].equalsIgnoreCase("Boots")) {
-                                    p.getInventory().addItem(new itemstack().Nether_Wart_Boots());
-                                    p.updateInventory();
+                                    d.getInventory().addItem(new itemstack().Nether_Wart_Boots());
+                                    d.updateInventory();
+                                }
+                            }
+                            if (args[1].equalsIgnoreCase("Bow")) {
+                                if (args[2].equalsIgnoreCase("Multi")) {
+                                    d.getInventory().addItem(new itemstack().Multi_Bow());
+                                    d.updateInventory();
                                 }
                             }
                         }

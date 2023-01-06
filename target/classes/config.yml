@@ -36,17 +36,15 @@ Weaponkit:
     ListItemsCommand:
       - "&7----------------- &aAvailable Items &7---------------"
       - "&5NetherWart Kit &7- Contains Nether Armor, Wither Sword and NetherWart"
-      - "&5Poison &7- Contains Sword and Axe"
-      - "&5Blindness &7- Contains Sword and Axe"
-      - "&5Nause &7- Contains Sword and Axe"
-      - "&5Wither &7- Contains Sword and Axe"
+      - "&5Sword's &7- Poison, Blindness, Nausea and Wither"
+      - "&5Axe's's &7- Poison, Blindness, Nausea and Wither"
       - "&7----------------------------------------------"
 
 # Important note!! Only one item in a slot
-    WitherKit:
+    WitherTear:
       Enchantments: true # How to disable: set it to: false
       Soulbound: true # How to disable: set it to: false
-      Name: '&5Wither kit'
+      Name: '&5Wither Tear'
       DisplayItemInGui: true # How to disable: set it to: false
       SlotNumber: 18
 
@@ -136,3 +134,10 @@ Weaponkit:
         Name: '&5WitherSword'
         DisplayItemInGui: true # How to disable: set it to: false
         SlotNumber: 3
+    Bow:
+      Multi:
+        Soulbound: true
+        Enchantments: true
+        Name: '&5Multi Bow'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 4

@@ -15,13 +15,17 @@ public class CooldownCommand implements CommandExecutor {
         weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
         String prefix = weaponkit.getConfig().getString(ChatColor.translateAlternateColorCodes('&', "Weaponkit.Prefix"));
         String CooldownReset = weaponkit.getConfig().getString("Weaponkit.Permissions.CooldownReset");
-        String CooldownMessage = weaponkit.getConfig().getString(ChatColor.translateAlternateColorCodes('&',"Weaponkit.CoolDown.ResetMessage"));
+        String CooldownMessage = weaponkit.getConfig().getString(ChatColor.translateAlternateColorCodes('&', "Weaponkit.CoolDown.ResetMessage"));
 
         if (command.getName().equalsIgnoreCase("CooldownReset")) {
-            if (sender.hasPermission("" + CooldownReset)) {
+            if (args.length == 1) {
                 Player p = (Player) sender;
-                Cooldown.setCooldown(p, "Kit", 0L);
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&',prefix + " " + CooldownMessage));
+                Player d = Bukkit.getServer().getPlayer(args[0]);
+
+                if (p.hasPermission("" + CooldownReset)) {
+                    Cooldown.setCooldown(d, "Kit", 0L);
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + " " + CooldownMessage));
+                }
             }
         }
         return false;

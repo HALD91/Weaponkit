@@ -1,5 +1,6 @@
 me\HALD91\Weaponkit\Gui\Listener.class
 me\HALD91\Weaponkit\Gui\itemstack.class
+me\HALD91\Weaponkit\Bow\MultiBow.class
 me\HALD91\Weaponkit\Cooldown\Cooldown.class
 me\HALD91\Weaponkit\CommandManger\WeaponkitCommand.class
 me\HALD91\Weaponkit\CommandManger\ConsoleWeaponkitCommand.class

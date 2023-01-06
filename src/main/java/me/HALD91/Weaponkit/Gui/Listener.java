@@ -7,9 +7,11 @@ import org.bukkit.Material;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,19 +24,19 @@ import java.util.Random;
 public class Listener implements org.bukkit.event.Listener {
     me.HALD91.Weaponkit.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
 
-    public String PAXE = weaponkit.getConfig().getString("Weaponkit.Items.PoisonAxeConfig.Name");
-    public String NAXE = weaponkit.getConfig().getString("Weaponkit.Items.NauseaAxeConfig.Name");
-    public String BAXE = weaponkit.getConfig().getString("Weaponkit.Items.BlindnessAxeConfig.Name");
-    public String WAXE = weaponkit.getConfig().getString("Weaponkit.Items.WitherAxeConfig.Name");
+    public String PAXE = weaponkit.getConfig().getString("Weaponkit.Items.Axe.PoisonAxeConfig.Name");
+    public String NAXE = weaponkit.getConfig().getString("Weaponkit.Items.Axe.NauseaAxeConfig.Name");
+    public String BAXE = weaponkit.getConfig().getString("Weaponkit.Items.Axe.BlindnessAxeConfig.Name");
+    public String WAXE = weaponkit.getConfig().getString("Weaponkit.Items.Axe.WitherAxeConfig.Name");
 
     // Sword's names
-    public String PSW = weaponkit.getConfig().getString("Weaponkit.Items.PoisonSwordConfig.Name");
-    public String NSW = weaponkit.getConfig().getString("Weaponkit.Items.NauseaSwordConfig.Name");
-    public String BSW = weaponkit.getConfig().getString("Weaponkit.Items.BlindnessSwordConfig.Name");
-    public String WSW = weaponkit.getConfig().getString("Weaponkit.Items.WitherSwordConfig.Name");
+    public String PSW = weaponkit.getConfig().getString("Weaponkit.Items.Sword.PoisonSwordConfig.Name");
+    public String NSW = weaponkit.getConfig().getString("Weaponkit.Items.Sword.NauseaSwordConfig.Name");
+    public String BSW = weaponkit.getConfig().getString("Weaponkit.Items.Sword.BlindnessSwordConfig.Name");
+    public String WSW = weaponkit.getConfig().getString("Weaponkit.Items.Sword.WitherSwordConfig.Name");
 
-    // NetherWart
-    public String NW = weaponkit.getConfig().getString("Weaponkit.Items.NetherWartKit.Name");
+    // Wither Tear
+    public String NW = weaponkit.getConfig().getString("Weaponkit.Items.WitherTear.Name");
 
     // Armor
     public String WH = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherHelmet.Name");
@@ -77,60 +79,67 @@ public class Listener implements org.bukkit.event.Listener {
 
     @EventHandler
     public void onEntityHit(EntityDamageByEntityEvent e) {
-        Random rand = new Random();
-
         if (((e.getEntity() instanceof Player)) && ((e.getDamager() instanceof Player))) {
-            if (e.isCancelled()) {
+            /*if (e.isCancelled()) {
                 return;
-            } else {
+            } else {*/
                 Player P = (Player) e.getEntity();
                 Player D = (Player) e.getDamager();
                 ItemStack I = D.getItemInHand();
 
                 // Axe's
-                if (onitem(I, PAXE + "", Material.DIAMOND_AXE)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',PAXE + ""), Material.DIAMOND_AXE)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
-                if (onitem(I, NAXE + "", Material.DIAMOND_AXE)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',NAXE + ""), Material.DIAMOND_AXE)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
-                if (onitem(I, WAXE + "", Material.DIAMOND_AXE)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',WAXE + ""), Material.DIAMOND_AXE)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
-                if (onitem(I, BAXE + "", Material.DIAMOND_AXE)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',BAXE + ""), Material.DIAMOND_AXE)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
 
                 // Sword's
-                if (onitem(I, PSW + "", Material.DIAMOND_SWORD)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',PSW + ""), Material.DIAMOND_SWORD)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
-                if (onitem(I, NSW + "", Material.DIAMOND_SWORD)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',NSW + ""), Material.DIAMOND_SWORD)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
-                if (onitem(I, WSW + "", Material.DIAMOND_SWORD)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',WSW + ""), Material.DIAMOND_SWORD)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
-                if (onitem(I, BSW + "", Material.DIAMOND_SWORD)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&',BSW + ""), Material.DIAMOND_SWORD)) {
                     P.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 1));
                     P.getWorld().playEffect(P.getLocation(), Effect.POTION_BREAK, 0);
-                    return;
                 }
             }
         }
+
+        @EventHandler
+        public void RightClick(PlayerInteractEvent e) {
+            Player P = (Player) e.getPlayer();
+            ItemStack I = P.getItemInHand();
+            // Wither Tear
+            if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
+                if (onitem(I, ChatColor.translateAlternateColorCodes('&', NW + ""), Material.GHAST_TEAR)) {
+                    for (PotionEffect effect : P.getActivePotionEffects()) {
+                        if (effect.getType().equals(PotionEffectType.WITHER) || effect.getType().equals(PotionEffectType.POISON) || effect.getType().equals(PotionEffectType.BLINDNESS) || effect.getType().equals(PotionEffectType.CONFUSION)) {
+                            P.removePotionEffect(effect.getType());
+                        }
+                    }
+                }
+            }
+        }
+
     }
-}
+/*}*/

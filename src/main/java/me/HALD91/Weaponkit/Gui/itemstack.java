@@ -25,13 +25,16 @@ me.HALD91.Weaponkit.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponk
     public String WSW = weaponkit.getConfig().getString("Weaponkit.Items.Sword.WitherSwordConfig.Name");
 
     // NetherWart
-    public String NW = weaponkit.getConfig().getString("Weaponkit.Items.WitherKit.Name");
+    public String NW = weaponkit.getConfig().getString("Weaponkit.Items.WitherTear.Name");
 
     // Armor
     public String WH = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherHelmet.Name");
     public String WC = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherChestPlate.Name");
     public String WL = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherLeggings.Name");
     public String WB = weaponkit.getConfig().getString("Weaponkit.Items.Armor.WitherBoots.Name");
+
+    // Bow
+    public String MulBow = weaponkit.getConfig().getString("Weaponkit.Items.Bow.Multi.Name");
 
 // Helmet
 public org.bukkit.inventory.ItemStack Poison_Axe() {
@@ -170,14 +173,14 @@ public org.bukkit.inventory.ItemStack Poison_Axe() {
         I.setItemMeta(Im);
         return I;
     }
-    public org.bukkit.inventory.ItemStack Nether_Wart() {
-        org.bukkit.inventory.ItemStack I = new org.bukkit.inventory.ItemStack(Material.NETHER_STAR, 1);
+    public org.bukkit.inventory.ItemStack Wither_Tear() {
+        org.bukkit.inventory.ItemStack I = new org.bukkit.inventory.ItemStack(Material.GHAST_TEAR, 1);
         ItemMeta Im = I.getItemMeta();
-        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Sword.NetherWartKit.Enchantments")) {
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.WitherTear.Enchantments")) {
             Im.addEnchant(Enchantment.DURABILITY, 3, true);
         }
         Im.setDisplayName(ChatColor.translateAlternateColorCodes('&', NW));
-        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Sword.NetherWartKit.Soulbound")) {
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.WitherTear.Soulbound")) {
             ArrayList Nau = new ArrayList();
             Nau.add("Soulbound");
             Im.setLore(Nau);
@@ -250,5 +253,20 @@ public org.bukkit.inventory.ItemStack Poison_Axe() {
         I.setItemMeta(Im);
         return I;
     }
-
+    public org.bukkit.inventory.ItemStack Multi_Bow() {
+        org.bukkit.inventory.ItemStack I = new org.bukkit.inventory.ItemStack(Material.BOW, 1);
+        ItemMeta Im = I.getItemMeta();
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Multi.Enchantments")) {
+            Im.addEnchant(Enchantment.ARROW_DAMAGE, 4, true);
+            Im.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
+        }
+        Im.setDisplayName(ChatColor.translateAlternateColorCodes('&', MulBow));
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Multi.Soulbound")) {
+            ArrayList Nau = new ArrayList();
+            Nau.add("Soulbound");
+            Im.setLore(Nau);
+        }
+        I.setItemMeta(Im);
+        return I;
+    }
 }
