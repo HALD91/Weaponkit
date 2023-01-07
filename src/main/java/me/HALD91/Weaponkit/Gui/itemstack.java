@@ -35,6 +35,7 @@ me.HALD91.Weaponkit.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponk
 
     // Bow
     public String MulBow = weaponkit.getConfig().getString("Weaponkit.Items.Bow.Multi.Name");
+    public String WitBow = weaponkit.getConfig().getString("Weaponkit.Items.Bow.Wither.Name");
 
 // Helmet
 public org.bukkit.inventory.ItemStack Poison_Axe() {
@@ -262,6 +263,23 @@ public org.bukkit.inventory.ItemStack Poison_Axe() {
         }
         Im.setDisplayName(ChatColor.translateAlternateColorCodes('&', MulBow));
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Multi.Soulbound")) {
+            ArrayList Nau = new ArrayList();
+            Nau.add("Soulbound");
+            Im.setLore(Nau);
+        }
+        I.setItemMeta(Im);
+        return I;
+    }
+
+    public org.bukkit.inventory.ItemStack Wither_Bow() {
+        org.bukkit.inventory.ItemStack I = new org.bukkit.inventory.ItemStack(Material.BOW, 1);
+        ItemMeta Im = I.getItemMeta();
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Wither.Enchantments")) {
+            Im.addEnchant(Enchantment.ARROW_DAMAGE, 4, true);
+            Im.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
+        }
+        Im.setDisplayName(ChatColor.translateAlternateColorCodes('&', WitBow));
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Wither.Soulbound")) {
             ArrayList Nau = new ArrayList();
             Nau.add("Soulbound");
             Im.setLore(Nau);

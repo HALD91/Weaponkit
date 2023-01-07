@@ -104,6 +104,10 @@ public class ConsoleWeaponkitCommand implements CommandExecutor {
                             p.getInventory().addItem(new itemstack().Multi_Bow());
                             p.updateInventory();
                         }
+                        if (args[2].equalsIgnoreCase("Wither")) {
+                            p.getInventory().addItem(new itemstack().Wither_Bow());
+                            p.updateInventory();
+                        }
                     }
                 }
 

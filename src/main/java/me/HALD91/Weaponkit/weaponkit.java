@@ -1,6 +1,7 @@
 package me.HALD91.Weaponkit;
 
 import me.HALD91.Weaponkit.Bow.MultiBow;
+import me.HALD91.Weaponkit.Bow.WitherBow;
 import me.HALD91.Weaponkit.CommandManger.ConsoleWeaponkitCommand;
 import me.HALD91.Weaponkit.CommandManger.WeaponkitCommand;
 import me.HALD91.Weaponkit.Cooldown.CooldownCommand;
@@ -21,6 +22,7 @@ public class weaponkit extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents((Listener)new WeaponkitGui(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents((Listener)new me.HALD91.Weaponkit.Gui.Listener(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents((Listener)new MultiBow(), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents((Listener)new WitherBow(), (Plugin)this);
         getCommand("Weaponkit").setExecutor((CommandExecutor)new WeaponkitCommand());
         getCommand("ConsoleWeaponkit").setExecutor((CommandExecutor)new ConsoleWeaponkitCommand());
         getCommand("CooldownReset").setExecutor((CommandExecutor)new CooldownCommand());

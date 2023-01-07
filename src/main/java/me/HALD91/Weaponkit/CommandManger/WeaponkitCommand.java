@@ -150,6 +150,10 @@ public class WeaponkitCommand implements CommandExecutor {
                                     d.getInventory().addItem(new itemstack().Multi_Bow());
                                     d.updateInventory();
                                 }
+                                if (args[2].equalsIgnoreCase("Wither")) {
+                                    d.getInventory().addItem(new itemstack().Wither_Bow());
+                                    d.updateInventory();
+                                }
                             }
                         }
                     } else {

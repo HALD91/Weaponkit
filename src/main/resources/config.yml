@@ -54,14 +54,14 @@ Weaponkit:
         Soulbound: true # How to disable: set it to: false
         Name: '&5Wither Helmet'
         DisplayItemInGui: true # How to disable: set it to: false
-        SlotNumber: 16
+        SlotNumber: 23
 
       WitherChestPlate:
         Enchantments: true # How to disable: set it to: false
         Soulbound: true # How to disable: set it to: false
         Name: '&5Wither ChestPlate'
         DisplayItemInGui: true # How to disable: set it to: false
-        SlotNumber: 17
+        SlotNumber: 24
 
       WitherLeggings:
         Enchantments: true # How to disable: set it to: false
@@ -138,6 +138,12 @@ Weaponkit:
       Multi:
         Soulbound: true
         Enchantments: true
-        Name: '&5Multi Bow'
+        Name: '&6Multi Bow'
         DisplayItemInGui: true # How to disable: set it to: false
-        SlotNumber: 4
+        SlotNumber: 7
+      Wither:
+        Soulbound: true
+        Enchantments: true
+        Name: '&5WitherBow'
+        DisplayItemInGui: true # How to disable: set it to: false
+        SlotNumber: 8

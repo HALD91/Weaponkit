@@ -51,6 +51,7 @@ public class WeaponkitGui implements Listener {
 
     // Bow
     public String MulBow = weaponkit.getConfig().getString("Weaponkit.Items.Bow.Multi.Name");
+    public String WitBow = weaponkit.getConfig().getString("Weaponkit.Items.Bow.Wither.Name");
 
     private final Inventory inv;
 
@@ -115,6 +116,10 @@ public class WeaponkitGui implements Listener {
         if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Multi.DisplayItemInGui")) {
             int Multi = weaponkit.getConfig().getInt("Weaponkit.Items.Bow.Multi.SlotNumber");
             inv.setItem(Multi, new itemstack().Multi_Bow());
+        }
+        if (weaponkit.getConfig().getBoolean("Weaponkit.Items.Bow.Wither.DisplayItemInGui")) {
+            int Wither = weaponkit.getConfig().getInt("Weaponkit.Items.Bow.Wither.SlotNumber");
+            inv.setItem(Wither, new itemstack().Wither_Bow());
         }
 
     }
@@ -191,6 +196,10 @@ public class WeaponkitGui implements Listener {
             // Bow
             if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&',MulBow))) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ConsoleWeaponkit" + " " + p.getName() + " " + "Bow Multi");
+            }
+
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&',WitBow))) {
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ConsoleWeaponkit" + " " + p.getName() + " " + "Bow Wither");
             }
 
 
