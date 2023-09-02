@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
 
 public class itemstack implements Listener {
-me.HALD91.Weaponkit.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
+me.HALD91.Weaponkit.Main.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.Main.weaponkit.class);
 
     // Axe's names
     public String PAXE = weaponkit.getConfig().getString("Weaponkit.Items.Axe.PoisonAxeConfig.Name");

@@ -1,10 +1,9 @@
 package me.HALD91.Weaponkit.Gui;
 
-import me.HALD91.Weaponkit.weaponkit;
+import me.HALD91.Weaponkit.Main.weaponkit;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,13 +11,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.material.NetherWarts;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class WeaponkitGui implements Listener {
     // Prefix
-    weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
+    weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.Main.weaponkit.class);
     String prefix = weaponkit.getConfig().getString("Weaponkit.Prefix");
     // Permissions
     String PermissionGuiUse = weaponkit.getConfig().getString("Weaponkit.Permissions.PermissionGuiUse");
@@ -56,7 +53,7 @@ public class WeaponkitGui implements Listener {
     private final Inventory inv;
 
     public WeaponkitGui(){
-        inv = Bukkit.createInventory(null, weaponkit.getConfig().getInt("Weaponkit.WeaponkitGui.Size"), ChatColor.translateAlternateColorCodes('&',WeaponkitGuiName));
+        inv = Bukkit.createInventory(null, WeaponkitGuiSize, ChatColor.translateAlternateColorCodes('&',WeaponkitGuiName));
         initializeItems();
     }
 

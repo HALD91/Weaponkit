@@ -1,6 +1,6 @@
 package me.HALD91.Weaponkit.Cooldown;
 
-import me.HALD91.Weaponkit.weaponkit;
+import me.HALD91.Weaponkit.Main.weaponkit;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class CooldownCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
+        weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.Main.weaponkit.class);
         String prefix = weaponkit.getConfig().getString(ChatColor.translateAlternateColorCodes('&', "Weaponkit.Prefix"));
         String CooldownReset = weaponkit.getConfig().getString("Weaponkit.Permissions.CooldownReset");
         String CooldownMessage = weaponkit.getConfig().getString(ChatColor.translateAlternateColorCodes('&', "Weaponkit.CoolDown.ResetMessage"));

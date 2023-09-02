@@ -3,7 +3,7 @@ package me.HALD91.Weaponkit.CommandManger;
 import me.HALD91.Weaponkit.Cooldown.Cooldown;
 import me.HALD91.Weaponkit.Gui.WeaponkitGui;
 import me.HALD91.Weaponkit.Gui.itemstack;
-import me.HALD91.Weaponkit.weaponkit;
+import me.HALD91.Weaponkit.Main.weaponkit;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -11,8 +11,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.material.NetherWarts;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
@@ -21,7 +19,7 @@ public class WeaponkitCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // Prefix
-        weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
+        weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.Main.weaponkit.class);
         String prefix = weaponkit.getConfig().getString(ChatColor.translateAlternateColorCodes('&', "Weaponkit.Prefix"));
 
         // Permissions

@@ -1,4 +1,4 @@
-package me.HALD91.Weaponkit;
+package me.HALD91.Weaponkit.Main;
 
 import me.HALD91.Weaponkit.Bow.MultiBow;
 import me.HALD91.Weaponkit.Bow.WitherBow;

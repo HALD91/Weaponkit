@@ -1,6 +1,5 @@
 package me.HALD91.Weaponkit.Gui;
 
-import me.HALD91.Weaponkit.weaponkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Material;
@@ -19,10 +18,9 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.List;
-import java.util.Random;
 
 public class Listener implements org.bukkit.event.Listener {
-    me.HALD91.Weaponkit.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
+    me.HALD91.Weaponkit.Main.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.Main.weaponkit.class);
 
     public String PAXE = weaponkit.getConfig().getString("Weaponkit.Items.Axe.PoisonAxeConfig.Name");
     public String NAXE = weaponkit.getConfig().getString("Weaponkit.Items.Axe.NauseaAxeConfig.Name");
@@ -129,6 +127,7 @@ public class Listener implements org.bukkit.event.Listener {
         public void RightClick(PlayerInteractEvent e) {
             Player P = (Player) e.getPlayer();
             ItemStack I = P.getItemInHand();
+            int times = 0;
             // Wither Tear
             if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
                 if (onitem(I, ChatColor.translateAlternateColorCodes('&', NW + ""), Material.GHAST_TEAR)) {

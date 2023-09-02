@@ -15,7 +15,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class WitherBow implements Listener {
     //Main File
-    me.HALD91.Weaponkit.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.weaponkit.class);
+    me.HALD91.Weaponkit.Main.weaponkit weaponkit = JavaPlugin.getPlugin(me.HALD91.Weaponkit.Main.weaponkit.class);
 
     //WitherBow Name
     public String WitBow = weaponkit.getConfig().getString("Weaponkit.Items.Bow.Wither.Name");
@@ -27,15 +27,17 @@ public class WitherBow implements Listener {
     @EventHandler
     public void onEntityHit(EntityDamageByEntityEvent e) {
         if (e.getDamager() instanceof Arrow) {
-            Arrow f = (Arrow) e.getDamager();
-            Player shootedplayer = (Player) e.getEntity();
-            if (f.getShooter() instanceof Player) {
-                Player shooter = (Player) f.getShooter();
-                if (e.getEntity() instanceof Player) {
-                    ItemStack I =  shooter.getItemInHand();
-                    if (onitem(I, ChatColor.translateAlternateColorCodes('&',WitBow + ""), Material.BOW)) {
-                        shootedplayer.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 1));
-                        shootedplayer.getWorld().playEffect(shootedplayer.getLocation(), Effect.POTION_BREAK, 0);
+            if (e.getEntity() instanceof Player) {
+                Arrow f = (Arrow) e.getDamager();
+                Player shootedplayer = (Player) e.getEntity();
+                if (f.getShooter() instanceof Player) {
+                    Player shooter = (Player) f.getShooter();
+                    if (e.getEntity() instanceof Player) {
+                        ItemStack I = shooter.getItemInHand();
+                        if (onitem(I, ChatColor.translateAlternateColorCodes('&', WitBow + ""), Material.BOW)) {
+                            shootedplayer.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 1));
+                            shootedplayer.getWorld().playEffect(shootedplayer.getLocation(), Effect.POTION_BREAK, 0);
+                        }
                     }
                 }
             }

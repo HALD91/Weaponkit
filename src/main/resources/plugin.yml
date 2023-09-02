@@ -1,6 +1,6 @@
 name: weaponkit
 version: 2.1.4.7
-main: me.HALD91.Weaponkit.weaponkit
+main: me.HALD91.Weaponkit.Main.weaponkit
 author: HALD91
 description: The plugin was made by HALD91.
 commands:
