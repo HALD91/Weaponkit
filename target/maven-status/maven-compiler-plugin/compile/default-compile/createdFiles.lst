@@ -1,10 +1,14 @@
-me\HALD91\Weaponkit\Bow\WitherBow.class
 me\HALD91\Weaponkit\Gui\Listener.class
 me\HALD91\Weaponkit\Gui\itemstack.class
-me\HALD91\Weaponkit\Bow\MultiBow.class
 me\HALD91\Weaponkit\Cooldown\Cooldown.class
 me\HALD91\Weaponkit\CommandManger\WeaponkitCommand.class
+me\HALD91\Weaponkit\CustomCrafts\CraftWitherBow.class
 me\HALD91\Weaponkit\CommandManger\ConsoleWeaponkitCommand.class
+me\HALD91\Weaponkit\CustomCrafts\AktivateCraftCommand.class
 me\HALD91\Weaponkit\Cooldown\CooldownCommand.class
+me\HALD91\Weaponkit\Bow\WitherBow.class
+me\HALD91\Weaponkit\Bow\MultiBow.class
+me\HALD91\Weaponkit\CustomCrafts\ActivateCraftListener.class
+me\HALD91\Weaponkit\CustomCrafts\CraftMultiBow.class
 me\HALD91\Weaponkit\Main\weaponkit.class
 me\HALD91\Weaponkit\Gui\WeaponkitGui.class

@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class WeaponkitCommand implements CommandExecutor {
     @Override
@@ -67,9 +68,9 @@ public class WeaponkitCommand implements CommandExecutor {
                     if (p.hasPermission(ChatColor.translateAlternateColorCodes('&', "" + PermissionItemGive))) {
                         if (!(args[0] == null)) {
                             if (args[1].equalsIgnoreCase("help")) {
-                                sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3/WeaponKit <Player> <Star>"));
-                                sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3/WeaponKit <Player> <Sword> <Poison,Blindness,Nausea,Wither>"));
-                                sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3/WeaponKit <Player> <Axe> <Poison,Blindness,Nausea,Wither>"));
+                                for (String m : HelpMessage) {
+                                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', m));
+                                }
                             }
                             if (args[1].equalsIgnoreCase("Sword")) {
                                 if (args[2].equalsIgnoreCase("Poison")) {
@@ -109,8 +110,7 @@ public class WeaponkitCommand implements CommandExecutor {
                             }
                             if (args[1].equalsIgnoreCase("Wither")) {
                                 if (args[2].equalsIgnoreCase("Kit")) {
-                                    p.sendMessage("" + d);
-                                    if (Cooldown.tryCooldown(d, "Kit", 86400000L)) {
+                                    if (Cooldown.tryCooldown(d, "Kit", 3600000L)) { // 3600000L = 60 hour 60000L = 60 Seconds
                                         d.getInventory().addItem(new itemstack().Wither_Sword());
                                         d.getInventory().addItem(new itemstack().Wither_Tear());
                                         d.getInventory().addItem(new itemstack().Nether_Wart_Helmet());
@@ -119,7 +119,7 @@ public class WeaponkitCommand implements CommandExecutor {
                                         d.getInventory().addItem(new itemstack().Nether_Wart_Boots());
                                         d.updateInventory();
                                     } else {
-                                        d.sendMessage(ChatColor.translateAlternateColorCodes('&',prefix + " " + weaponkit.getConfig().getString("Weaponkit.CoolDown.WaitMessage")));
+                                        d.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + " " + weaponkit.getConfig().getString("Weaponkit.CoolDown.WaitMessage") + " " + Cooldown.getCooldown(d, "Kit") + " " + "Minutes")); // + " " + Cooldown.getCooldown(d, "Kit")
                                     }
                                 }
                                 if (args[2].equalsIgnoreCase("Tear")) {

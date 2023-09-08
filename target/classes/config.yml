@@ -7,6 +7,7 @@ Weaponkit:
     NetherWartGive: "weaponkit.netherstar.give"
     ItemGive: "weaponkit.item.give"
     CooldownReset: "cooldown.reset.use"
+    ActivateCraft: "activate.craft.use"
 
   ConsoleCommand:
     NotAPlayerCommand: "&cThis Command can only be use by the &aConsole."
@@ -18,11 +19,14 @@ Weaponkit:
     GetSlotNrOnItemClick: false # How to enable: set it to: true
 
   CoolDown:
-    WaitMessage: "&7Please wait until the &acooldown &7has run out"
+    WaitMessage: "&7Please wait until the &acooldown &7has run out. Time left:&5"
     ResetMessage: "&7Your &acooldown &7has been &3reset"
 
   Messages:
     PermissionMessage: "&cYou do not have permission to use this command."
+    ActivateCraftOnMessage: "&7Can now use custom crafts."
+    ActivateCraftOffMessage: "Can no longer use custom crafts."
+    ActivateCraftIsOffMessage: "&cYour not allowed to use custom crafts."
     HelpMessage:
       - "&7----------------- &aHelp &7---------------"
       - "&5/WeaponKit help &7- To see how to use this command"
@@ -30,14 +34,17 @@ Weaponkit:
       - "&5/WeaponKit List &7- To see what type of items are available"
       - "&5/WeaponKit <Player> Star &7- To receive a Nether star, right click it an receive a kit of wither armor and sword"
       - "&5/WeaponKit <Player> <ItemType> <EffectType> &7- To give a player a item"
+      - "&5/Weaponkit <Player <Wither> <Item> &7- To give the a player a wither item"
+      - "&5/ActivateCraft <Player> <On/Off> &7- To allow/deny the player to use CustomCrafts"
       - "&7-------------------------------------"
 
   Items:
     ListItemsCommand:
       - "&7----------------- &aAvailable Items &7---------------"
-      - "&5NetherWart Kit &7- Contains Nether Armor, Wither Sword and NetherWart"
-      - "&5Sword's &7- Poison, Blindness, Nausea and Wither"
-      - "&5Axe's's &7- Poison, Blindness, Nausea and Wither"
+      - "&5Sword: &7- Poison, Blindness, Nausea and Wither"
+      - "&5Axe: &7- Poison, Blindness, Nausea and Wither"
+      - "&5Bow: &7- Multi and Wither"
+      - "&5Wither: &7- Kit, Tear, Helmet, ChestPlate, Leggins and Boots"
       - "&7----------------------------------------------"
 
 # Important note!! Only one item in a slot
